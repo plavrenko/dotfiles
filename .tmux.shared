@@ -40,9 +40,9 @@ set-option -g status-left-length 40
 setw -g window-status-bg colour241
 setw -g window-status-current-fg colour234
 
-setw -g window-status-alert-attr bold
-setw -g window-status-alert-fg red
-setw -g window-status-alert-bg yellow
+#setw -g window-status-alert-attr bold
+#setw -g window-status-alert-fg red
+#setw -g window-status-alert-bg yellow
 
 setw -g window-status-bell-attr bold
 setw -g window-status-bell-fg red

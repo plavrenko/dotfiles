@@ -1,0 +1,32 @@
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profiles
+# sources /etc/bash.bashrc).
+#if [ -f /etc/bash_completion ]; then
+#    . /etc/bash_completion
+#fi
+
+# make sure bash checks for window size changes (why is this not the default?!?)
+shopt -s checkwinsize
+
+# don't blindly execute history expansions, but edit instead
+shopt -s histverify
+
+# when tab completing, don't show dotfiles
+bind 'set match-hidden-files off'
+
+# capture more history
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+
+export EDITOR=vim
+
+OS=`uname -s`
+
+function reconnect_ssh_agent() {   
+    if [[ -n $TMUX ]]; then
+        NEW_SSH_AUTH_SOCK=`tmux showenv|grep ^SSH_AUTH_SOCK|cut -d = -f 2`
+        if [[ -n $NEW_SSH_AUTH_SOCK ]] && [[ -S $NEW_SSH_AUTH_SOCK ]]; then 
+            SSH_AUTH_SOCK=$NEW_SSH_AUTH_SOCK  
+        fi
+    fi
+}

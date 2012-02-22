@@ -1,0 +1,7 @@
+startup_message off
+term xterm-color
+setenv PATH /Users/ill/Applications/bin/:/opt/local/bin:/opt/local/sbin:/sw/bin:/sw/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/X11R6/bin
+defscrollback 1000
+shell -/bin/bash
+
+#termcapinfo xterm-color ti@:te@

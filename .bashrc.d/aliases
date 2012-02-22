@@ -19,6 +19,3 @@ function clearkey() {
 
 # forget history for this session
 alias nvm="export HISTFILE=/dev/null"
-
-# git
-alias git-log-pretty='git log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short'

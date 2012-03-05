@@ -1,5 +1,5 @@
 " Maintainer:	Pavel Lavrenko <pavel@lavrenko.info>
-" Last change:  2011.04.05
+" Last change:  2012.05.05
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -28,7 +28,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
-set langmap=ÊÃÕËÅÎÇÛİÚÈßÆÙ×ÁĞÒÏÌÄÖÜÑŞÓÍÉÔØÂÀêãõëåHçûıúèÿæù÷áğòïìäöüñşóíéôøâà;qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
+set langmap=Ğ¤Ğ˜Ğ¡Ğ’Ğ£ĞĞŸĞ Ğ¨ĞĞ›Ğ”Ğ¬Ğ¢Ğ©Ğ—Ğ™ĞšĞ«Ğ•Ğ“ĞœĞ¦Ğ§ĞĞ¯;ABCDEFGHIJKLMNOPQRSTUVWXYZ,Ñ„Ğ¸ÑĞ²ÑƒĞ°Ğ¿Ñ€ÑˆĞ¾Ğ»Ğ´ÑŒÑ‚Ñ‰Ğ·Ğ¹ĞºÑ‹ĞµĞ³Ğ¼Ñ†Ñ‡Ğ½Ñ;abcdefghijklmnopqrstuvwxyz
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -83,6 +83,9 @@ function! <SID>EnableFolding()
     set foldcolumn=4 
 endfunction 
 
+" use space bar to open/close folds
+nnoremap <space> za
+
 :command! -nargs=0 FOLD call <SID>EnableFolding() 
 map FF :FOLD<CR>
 
@@ -91,14 +94,13 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set softtabstop=4
-set autoindent
+"set autoindent
 
 " Python
 let python_highlight_all = 1
 
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
 
 " omnicompletion
 autocmd FileType python set omnifunc=pythoncomplete#Complete

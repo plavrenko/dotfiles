@@ -26,7 +26,9 @@
 # ------------------------------------------------------------------------------
 
 startup_message off
-#nethack on
+nethack on
+
+altscreen on
 
 #defflow on # will force screen to process ^S/^Q
 #deflogin on

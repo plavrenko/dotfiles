@@ -12,7 +12,10 @@ shopt -s checkwinsize
 shopt -s histverify
 
 # when tab completing, don't show dotfiles
-bind 'set match-hidden-files off'
+case "$-" in
+*i*)
+    bind 'set match-hidden-files off'
+esac
 
 # capture more history
 export HISTSIZE=5000

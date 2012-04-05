@@ -1,7 +1,5 @@
 # shared amongst all tmux
 
-set bell-on-alert on
-
 # VI keybindings please
 setw -g mode-keys vi
 
@@ -35,24 +33,37 @@ bind-key "'" choose-session
 set-option -g status-utf8 on
 # set-option -g status-justify centre
 set-option -g status-justify left
-set-option -g status-bg green
-set-option -g status-fg white
+set-option -g status-bg colour071
+set-option -g status-fg colour015
 set-option -g status-left-length 40
 
-setw -g window-status-bg green
-setw -g window-status-current-fg black
-setw -g window-status-alert-attr default
-setw -g window-status-alert-fg yellow
+setw -g window-status-bg colour071
+setw -g window-status-current-fg white
+
+setw -g window-status-alert-attr bold
+setw -g window-status-alert-fg red
+setw -g window-status-alert-bg yellow
+
+setw -g window-status-bell-attr bold
+setw -g window-status-bell-fg red
+setw -g window-status-activity-bg red
+
+set -g visual-activity off
+set -g visual-bell off
+set bell-on-alert on
 
 # monitor activity
 setw -g monitor-activity on
-set -g visual-activity off
 
 bind m setw monitor-activity off
 bind M setw monitor-activity on
 
 #set -g status-left '#[fg=red]#H#[fg=black]:#[fg=white]#S #[fg=black]||#[default]'
-set -g status-right '#[fg=red]#H#[fg=black]:#[fg=white]#S #[fg=black] #[fg=green]'
+set -g status-left ' '
+set -g status-right '#[fg=colour011]#H#[fg=black]:#[fg=white]#S #[fg=black] #[fg=green]'
 #set -g status-right '#[fg=green]][#[fg=white] #T #[fg=green]][ #[fg=blue]%Y-%m-%d #[fg=white]%H:%M#[default]'
 #set -g status-right '#[fg=green]][ #[fg=blue]%Y-%m-%d #[fg=white]%H:%M#[default]'
-#set -g status-right ''
+set -g window-status-current-format "#[fg=white,bold,bg=blue] #I: #W "
+set -g window-status-format "#[fg=black,bg=colour071] #I: #W" 
+
+

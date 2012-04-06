@@ -42,6 +42,8 @@ nnoremap <cr> :noh<CR>
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2
     syntax on
+    set background=light
+    colorscheme solarized
     set hlsearch
 endif
 

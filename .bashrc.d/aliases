@@ -19,3 +19,13 @@ function clearkey() {
 
 # forget history for this session
 alias nvm="export HISTFILE=/dev/null"
+
+# upload publick key
+function upload_key() {
+    if [ x"$1" == "x" ]; then
+        echo "Error: you should provide a hostname"
+    else
+        cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -m 700 -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
+    fi
+}
+alias ssh-upload-key="upload_key"

@@ -33,3 +33,5 @@
 [core]
 	quotepath = false
     include = .gitconfig_user
+[push]
+	default = simple

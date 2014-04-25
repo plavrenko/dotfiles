@@ -1,6 +1,6 @@
 [user]
 	email = pavel@lavrenko.info
-	name = "Pavel Lavrenko"
+	name = Pavel Lavrenko
 [color]
     diff = auto
     status = auto
@@ -32,3 +32,4 @@
 
 [core]
 	quotepath = false
+    include = .gitconfig_user

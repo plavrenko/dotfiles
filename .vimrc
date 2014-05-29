@@ -96,6 +96,8 @@ set expandtab
 set softtabstop=4
 "set autoindent
 
+set showtabline=2
+
 " Python
 let python_highlight_all = 1
 

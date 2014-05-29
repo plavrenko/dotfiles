@@ -1,5 +1,5 @@
 " Maintainer:	Pavel Lavrenko <pavel@lavrenko.info>
-" Last change:  2012.05.05
+" Last change:  2014.05.29
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"

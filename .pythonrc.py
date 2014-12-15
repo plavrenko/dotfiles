@@ -23,13 +23,14 @@ if os.path.exists(historyPath):
 # register saving handler
 atexit.register(save_history)
 
-# enable completion
-if sys.platform.startswith('darwin'):
-	# for BSD readline
-	readline.parse_and_bind('bind ^I rl_complete')
+#enable completion
+if (sys.platform.startswith('darwin')) and ('libedit' in readline.__doc__):
+    # for BSD readline
+    readline.parse_and_bind('bind ^I rl_complete')
 else:
-	# for GNU readline
-	readline.parse_and_bind('tab: complete')
+    # for GNU readline
+    readline.parse_and_bind('tab: complete')
+
 
 # cleanup
 del os, atexit, readline, rlcompleter, save_history, historyPath

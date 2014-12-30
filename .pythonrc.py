@@ -18,7 +18,10 @@ def save_history(historyPath=historyPath):
 
 # read history, if it exists
 if os.path.exists(historyPath):
-	readline.read_history_file(historyPath)
+    try:
+        readline.read_history_file(historyPath)
+    except OSError:
+        pass
 
 # register saving handler
 atexit.register(save_history)

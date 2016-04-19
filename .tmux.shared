@@ -1,5 +1,7 @@
 # shared amongst all tmux
 
+set -g history-limit 10000
+
 # VI keybindings please
 setw -g mode-keys vi
 
@@ -50,7 +52,7 @@ setw -g window-status-activity-bg red
 
 set -g visual-activity off
 set -g visual-bell off
-set bell-on-alert on
+#set bell-on-alert on
 
 setw -g pane-active-border-fg colour234
 setw -g pane-border-fg colour240
@@ -68,3 +70,6 @@ set -g status-right '#[fg=colour011]#H#[fg=colour254]:#[fg=colour230]#S #[fg=bla
 #set -g status-right '#[fg=green]][ #[fg=blue]%Y-%m-%d #[fg=white]%H:%M#[default]'
 set -g window-status-current-format "#[fg=colour234,bold,bg=colour254] #I: #W "
 set -g window-status-format "#[fg=colour254,bg=colour241] #I: #W" 
+
+set -g mouse on
+
